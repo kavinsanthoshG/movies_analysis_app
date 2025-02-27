@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.name %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container">
+        <h1><%= movie.name %></h1>
+        <p><strong>Tagline:</strong> <%= movie.tagline %></p>
+        <p><strong>Description:</strong> <%= movie.description %></p>
+        <p><strong>Duration:</strong> <%= movie.minute %> minutes</p>
+        <p><strong>Average Rating:</strong> <%= movie.averageRating %></p>
+        <p><strong>Genres:</strong> <%= movie.genres %></p>
+        <p><strong>Release Date:</strong> <%= movie.ReleaseDate %></p>
+        <p><strong>Release Type:</strong> <%= movie.ReleaseType %></p>
+        <p><strong>Country:</strong> <%= movie.Country %></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "movie-analysis-app",
+  "version": "1.0.0",
+  "description": "A web application to view and analyze movies",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mssql": "^11.0.1"
+  }
+}
