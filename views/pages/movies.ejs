@@ -1,3 +1,4 @@
+<!-- filepath: /c:/Users/kavin/movie-analysis-app/views/pages/movies.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +10,11 @@
 <body>
     <%- include('../partials/header') %>
     <div class="container">
-        <h1>Movies</h1>
-        <div id="movies-list">
-            <!-- Movies will be dynamically inserted here -->
-        </div>
+        <form id="search-form" class="search-form">
+            <input type="text" id="search-input" placeholder="Search for a movie..." class="search-input">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+        <div id="movies-list"></div>
     </div>
     <script src="/js/scripts.js"></script>
 </body>
