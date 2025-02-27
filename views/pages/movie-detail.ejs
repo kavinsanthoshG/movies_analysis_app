@@ -10,7 +10,9 @@
     <%- include('../partials/header') %>
     <div class="container">
         <div class="movie-detail-container">
-            <img src="<%= movie.PosterLink %>" alt="<%= movie.name %> Poster" class="movie-poster">
+            <div class="movie-poster-container">
+                <img src="<%= movie.PosterLink %>" alt="<%= movie.name %> Poster" class="movie-poster">
+            </div>
             <div class="movie-details">
                 <h1><%= movie.name %></h1>
                 <p><strong>Tagline:</strong> <%= movie.tagline %></p>
@@ -19,6 +21,7 @@
                 <p><strong>Average Rating:</strong> <%= movie.averageRating %></p>
                 <p><strong>Release Year:</strong> <%= movie.releaseYear %></p>
                 <p><strong>Release Type:</strong> <%= movie.ReleaseType %></p>
+                <p><strong>Genres:</strong> <%= movie.genres %></p>
             </div>
         </div>
     </div>

@@ -56,14 +56,14 @@ app.get('/movies/:id', async (req, res) => {
         // Query to get detailed movie data
         const request = new sql.Request();
         request.input('movieId', sql.Int, movieId);
-        const result = await request.query(`
+        const movieResult = await request.query(`
             SELECT 
                 m.name, 
                 m.tagline, 
                 m.description, 
                 m.minute, 
                 m.rating AS averageRating, 
-                m.date AS releaseYear, 
+                YEAR(m.date) AS releaseYear, 
                 r.ReleaseType, 
                 p.PosterLink
             FROM Movies m
@@ -71,10 +71,25 @@ app.get('/movies/:id', async (req, res) => {
             LEFT JOIN movie_posters p ON m.id = p.MovieID
             WHERE m.id = @movieId
         `);
-        console.log('Query executed successfully');
-        console.log(result);
+        console.log('Movie query executed successfully');
+        
+        // Query to get genres
+        const genreResult = await request.query(`
+            SELECT 
+                STRING_AGG(g.Genre, ', ') AS genres
+            FROM Movies m
+            LEFT JOIN MovieGenres g ON m.id = g.MovieID
+            WHERE m.id = @movieId
+            GROUP BY m.name, m.tagline, m.description, m.minute, m.rating, m.date
+        `);
+        console.log('Genre query executed successfully');
+        
+        // Combine results
+        const movie = movieResult.recordset[0];
+        movie.genres = genreResult.recordset[0].genres;
+        
         // Render the detailed movie page
-        res.render('pages/movie-detail', { movie: result.recordset[0] });
+        res.render('pages/movie-detail', { movie });
     } catch (err) {
         console.error('Database query failed:', err);
         res.status(500).send('Internal Server Error');
