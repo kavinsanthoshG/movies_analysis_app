@@ -80,7 +80,7 @@ app.get('/api/movies', async (req, res) => {
         
         // Optimized query
         const result = await sql.query(`
-            SELECT TOP 10 
+            SELECT TOP 100
                 m.id, 
                 m.name, 
                 m.rating, 

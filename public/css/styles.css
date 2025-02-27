@@ -5,26 +5,49 @@ body {
     background-color: #f4f4f4;
 }
 
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center items vertically */
+    position: relative; /* Position relative for absolute positioning of right link */
+    width: 100%; /* Ensure the nav takes full width */
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    font-size: 2em; /* Increase the text size twice */
+    font-weight: bold; /* Make the text bold */
+    color: #fff; /* Ensure the text color is white */
+    text-decoration: none; /* Remove underline from links */
+}
+
+header nav ul li.right {
+    position: absolute; /* Position absolute to the right */
+    right: 10px; /* Adjust the right position */
+}
+
+header nav ul li.center {
+    margin: 0 auto; /* Center the item */
+}
+
+header nav ul li a.highlight {
+    background-color: #ff0; /* Highlight background color */
+    color: #000; /* Text color for highlighted link */
+    padding: 5px 10px; /* Add padding to the link */
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid #000; /* Border around the link */
+}
+
 header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
     text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
 }
 
 .container {
