@@ -18,9 +18,11 @@ async function fetchMovies() {
             const movieItem = document.createElement('div');
             movieItem.className = 'movie-item';
             movieItem.innerHTML = `
-                <img src="${movie.PosterLink}" alt="${movie.name} Poster" class="movie-poster">
-                <h2>${movie.name}</h2>
-                <p>Rating: ${movie.rating}</p>
+                <a href="/movies/${movie.id}">
+                    <img src="${movie.PosterLink}" alt="${movie.name} Poster" class="movie-poster">
+                    <h2>${movie.name}</h2>
+                    <p>Rating: ${movie.rating}</p>
+                </a>
             `;
             moviesList.appendChild(movieItem);
         });

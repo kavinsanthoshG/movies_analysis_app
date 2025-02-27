@@ -50,3 +50,22 @@ header nav ul li a {
     width: 100%;
     height: auto;
 }
+
+.movie-detail-container {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ddd; /* Add border to the container */
+    padding: 20px; /* Add padding to the container */
+    background-color: #fff; /* Add background color to the container */
+}
+
+.movie-poster {
+    width: 40%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 60vh; /* Reduce the height by 40% */
+    margin-right: 20px; /* Space between poster and details */
+}
+
+.movie-details {
+    flex: 1;
+}

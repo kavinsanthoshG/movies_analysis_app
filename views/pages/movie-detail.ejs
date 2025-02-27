@@ -9,15 +9,18 @@
 <body>
     <%- include('../partials/header') %>
     <div class="container">
-        <h1><%= movie.name %></h1>
-        <p><strong>Tagline:</strong> <%= movie.tagline %></p>
-        <p><strong>Description:</strong> <%= movie.description %></p>
-        <p><strong>Duration:</strong> <%= movie.minute %> minutes</p>
-        <p><strong>Average Rating:</strong> <%= movie.averageRating %></p>
-        <p><strong>Genres:</strong> <%= movie.genres %></p>
-        <p><strong>Release Date:</strong> <%= movie.ReleaseDate %></p>
-        <p><strong>Release Type:</strong> <%= movie.ReleaseType %></p>
-        <p><strong>Country:</strong> <%= movie.Country %></p>
+        <div class="movie-detail-container">
+            <img src="<%= movie.PosterLink %>" alt="<%= movie.name %> Poster" class="movie-poster">
+            <div class="movie-details">
+                <h1><%= movie.name %></h1>
+                <p><strong>Tagline:</strong> <%= movie.tagline %></p>
+                <p><strong>Description:</strong> <%= movie.description %></p>
+                <p><strong>Duration:</strong> <%= movie.minute %> minutes</p>
+                <p><strong>Average Rating:</strong> <%= movie.averageRating %></p>
+                <p><strong>Release Year:</strong> <%= movie.releaseYear %></p>
+                <p><strong>Release Type:</strong> <%= movie.ReleaseType %></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
