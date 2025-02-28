@@ -1,5 +1,5 @@
 require('dotenv').config()
-console.log(process.env)
+// console.log(process.env)
 const config = {
     user: process.env.AZUREUSERNAME,
     password: process.env.AZURESQLDBPASSWORD,
